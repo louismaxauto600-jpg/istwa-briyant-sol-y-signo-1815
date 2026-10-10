@@ -1,0 +1,20 @@
+:root{
+  --bg:#050200;
+  --bg2:#0f0700;
+  --bg3:#1a0e03;
+  --orange:#FF7A18;
+  --apricot:#FFC78E;
+  --apricot-light:#FFD6A8;
+  --apricot-dim:#B87A3D;
+  --border:rgba(255,122,24,0.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--apricot);font-family:Manrope,sans-serif}
+h1,h2,h3{color:var(--apricot-light)}
+#progress{position:fixed;top:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--apricot))}
+.hero{background:radial-gradient(ellipse at 70% 40%,rgba(255,122,24,0.18),rgba(5,2,0,0) 60%),var(--bg)}
+.hero-soley{
+  background:radial-gradient(circle at 30% 30%,var(--apricot-light),var(--orange) 45%,var(--bg2) 75%);
+  box-shadow:0 0 120px rgba(255,122,24,0.4);
+}
+/* Tout lòt eleman - sèlman orange/apricot sou nwa fade */
