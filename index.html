@@ -8,16 +8,23 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#050200;color:#FFC78E;font-family:Arial,sans-serif}
 header{background:#0A0A0A;border-bottom:3px solid #FF7A18;padding:15px;text-align:center;position:sticky;top:0;z-index:100}
-h1{color:#FF7A18;font-size:1.3em;letter-spacing:1px}
+.logo{width:90px;height:90px;border-radius:50%;border:3px solid #FF7A18;object-fit:cover}
+h1{color:#FF7A18;font-size:1.3em;margin-top:8px}
 .sub{color:#FFC78E;font-size:.85em;margin-top:5px}
 .lang{margin-top:10px}
 button.l{background:#0A0A0A;color:#FF7A18;border:2px solid #FF7A18;padding:6px 16px;margin:0 4px;border-radius:20px;cursor:pointer;font-weight:bold}
 button.l.on{background:#FF7A18;color:#000}
-#slideshow{width:100%;max-width:900px;margin:20px auto;position:relative;border:3px solid #FF7A18;border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9}
-.slide{display:none;width:100%;height:100%;position:absolute;top:0;left:0}
-.slide.active{display:block}
-.slide img{width:100%;height:100%;object-fit:cover}
-.scene-label{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.85);color:#FF7A18;padding:5px 12px;border:1px solid #FF7A18;border-radius:8px;font-weight:bold}
+section{max-width:900px;margin:25px auto;padding:0 15px}
+h2.sec{color:#FF7A18;text-align:center;margin-bottom:15px;font-size:1.4em;border-bottom:2px solid #FF7A18;padding-bottom:8px}
+.scene{border:2px solid #FF7A18;border-radius:12px;overflow:hidden;margin-bottom:20px;background:#0A0A0A}
+.scene img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
+.scene-cap{padding:12px;text-align:center}
+.scene-cap b{color:#FF7A18}
+#konklizyon{background:#0A0A0A;border:2px solid #FF7A18;border-radius:12px;padding:20px}
+#memwa{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.mem-card{border:2px solid #FF7A18;border-radius:12px;overflow:hidden;background:#0A0A0A;text-align:center}
+.mem-card img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.mem-card h3{color:#FF7A18;padding:10px}
 #gallery-title{text-align:center;color:#FF7A18;margin:30px 0 15px;font-size:1.4em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:15px;max-width:1200px;margin:auto}
 .card{position:relative;border-radius:10px;overflow:hidden;border:2px solid #FF7A18;background:#0A0A0A;aspect-ratio:3/4}
@@ -25,82 +32,109 @@ button.l.on{background:#FF7A18;color:#000}
 .num{position:absolute;top:6px;left:6px;background:rgba(0,0,0,.85);color:#FF7A18;padding:3px 8px;border-radius:6px;font-weight:bold;font-size:.75em;border:1px solid #FF7A18}
 .overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.95));padding:20px 8px 8px;text-align:center}
 .name{color:#FF7A18;font-weight:900;font-size:.85em}
-.role{color:#FFC78E;font-size:.7em;margin-top:2px}
+.role{color:#FFC78E;font-size:.7em}
 footer{text-align:center;padding:20px;color:#FF7A18;border-top:2px solid #FF7A18;margin-top:20px}
 </style>
 </head>
 <body>
 <header>
-<h1>DOCUMENTARY HISTORY OF BRIYANT SOLEY 1815</h1>
-<p class="sub">OFFICIAL DOCUMENTS - HISTORY AND HERITAGE</p>
-<div class="lang"><button class="l on" onclick="setL(this)">KRE</button><button class="l" onclick="setL(this)">FRA</button><button class="l" onclick="setL(this)">ENG</button></div>
+<img src="logo-briyant-soley.jpg" class="logo" alt="LOGO" onerror="this.style.display='none'">
+<h1 data-kre="DOKIMANTÈ ISTWA BRIYANT SOLEY 1815" data-fra="DOCUMENTAIRE HISTOIRE DE BRIYANT SOLEY 1815" data-eng="DOCUMENTARY HISTORY OF BRIYANT SOLEY 1815">DOKIMANTÈ ISTWA BRIYANT SOLEY 1815</h1>
+<p class="sub" data-kre="DOKIMAN OFISYÈL - ISTWA AK ERITAJ" data-fra="DOCUMENTS OFFICIELS - HISTOIRE ET PATRIMOINE" data-eng="OFFICIAL DOCUMENTS - HISTORY AND HERITAGE">DOKIMAN OFISYÈL - ISTWA AK ERITAJ</p>
+<div class="lang">
+<button class="l on" onclick="setLang('kre',this)">KRE</button>
+<button class="l" onclick="setLang('fra',this)">FRA</button>
+<button class="l" onclick="setLang('eng',this)">ENG</button>
+</div>
 </header>
 
-<div id="slideshow">
-<div class="slide active"><img src="scene1.jpg" alt="SCENE 1"><div class="scene-label">SCENE 1</div></div>
-<div class="slide"><img src="scene2.jpg" alt="SCENE 2"><div class="scene-label">SCENE 2</div></div>
-<div class="slide"><img src="scene3.jpg" alt="SCENE 3"><div class="scene-label">SCENE 3</div></div>
-<div class="slide"><img src="scene4.jpg" alt="SCENE 4"><div class="scene-label">SCENE 4</div></div>
-<div class="slide"><img src="scene5.jpg" alt="SCENE 5"><div class="scene-label">SCENE 5</div></div>
-<div class="slide"><img src="scene6.jpg" alt="SCENE 6"><div class="scene-label">SCENE 6</div></div>
-</div>
+<!-- 6 SCENES YOUN APRÈ LÒT -->
+<section id="scenes">
+<h2 class="sec" data-kre="6 SCÈNES" data-fra="6 SCÈNES" data-eng="6 SCENES">6 SCÈNES</h2>
+<div class="scene"><img src="scene1.jpg" alt="SCENE 1"><div class="scene-cap"><b>SCENE 1</b><p data-kre="Kòmansman istwa a" data-fra="Début de l'histoire" data-eng="Beginning of the story">Kòmansman istwa a</p></div></div>
+<div class="scene"><img src="scene2.jpg" alt="SCENE 2"><div class="scene-cap"><b>SCENE 2</b></div></div>
+<div class="scene"><img src="scene3.jpg" alt="SCENE 3"><div class="scene-cap"><b>SCENE 3</b></div></div>
+<div class="scene"><img src="scene4.jpg" alt="SCENE 4"><div class="scene-cap"><b>SCENE 4</b></div></div>
+<div class="scene"><img src="scene5.jpg" alt="SCENE 5"><div class="scene-cap"><b>SCENE 5</b></div></div>
+<div class="scene"><img src="scene6.jpg" alt="SCENE 6"><div class="scene-cap"><b>SCENE 6</b></div></div>
+</section>
 
-<h2 id="gallery-title">GALERI</h2>
+<!-- KONKLIZYON -->
+<section id="konklizyon-sec">
+<h2 class="sec" data-kre="KONKLIZYON" data-fra="CONCLUSION" data-eng="CONCLUSION">KONKLIZYON</h2>
+<div id="konklizyon"><p data-kre="Istwa Briyant Soley 1815 se eritaj nou. Nou sonje tout moun ki te batay pou kenbe flanm nan limen." data-fra="L'histoire de Briyant Soley 1815 est notre patrimoine. Nous nous souvenons de tous ceux qui ont lutté pour garder la flamme allumée." data-eng="The history of Briyant Soley 1815 is our heritage. We remember all those who fought to keep the flame alive.">Istwa Briyant Soley 1815 se eritaj nou. Nou sonje tout moun ki te batay pou kenbe flanm nan limen.</p></div>
+</section>
+
+<!-- MEMWA 2 MOUN KI MOURI -->
+<section>
+<h2 class="sec" data-kre="MEMWA" data-fra="MÉMOIRE" data-eng="IN MEMORY">MEMWA</h2>
+<div id="memwa">
+<div class="mem-card"><img src="konkont.jpg" alt="KONKONT"><h3>KONKONT</h3></div>
+<div class="mem-card"><img src="papouche-stratège.jpg" alt="PAPOUCHE STRATÈGE"><h3>PAPOUCHE STRATÈGE</h3></div>
+</div>
+</section>
+
+<!-- GALERI -->
+<h2 id="gallery-title" data-kre="GALERI" data-fra="GALERIE" data-eng="GALLERY">GALERI</h2>
 <div class="grid">
-<div class="card"><div class="num">01</div><img src="ti-lafrance.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI-LA FRANCE</div><div class="role">THINKING HEAD</div></div></div>
-<div class="card"><div class="num">02</div><img src="jij-mayan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JUDGE MAYAN</div><div class="role">TREASURER</div></div></div>
-<div class="card"><div class="num">03</div><img src="vice-prezidan-tatane.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VICE PRESIDENT TATANE</div><div class="role">VICE PRESIDENT</div></div></div>
-<div class="card"><div class="num">04</div><img src="roro-lajan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RORO LAJAN</div><div class="role">THE MEDIATOR</div></div></div>
-<div class="card"><div class="num">05</div><img src="desulme-derosier.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DESULME DEROSIER</div><div class="role">LEADER</div></div></div>
-<div class="card"><div class="num">06</div><img src="warrens.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">WARRENS</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">07</div><img src="bouboul.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BOUBOUL</div><div class="role">COLONEL</div></div></div>
-<div class="card"><div class="num">08</div><img src="joseph-marthone.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JOSEPH MARTHONE</div><div class="role">INCOMPARABLE</div></div></div>
-<div class="card"><div class="num">09</div><img src="jude-joseph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JUDE JOSEPH</div><div class="role">EX PRESIDENT</div></div></div>
-<div class="card"><div class="num">10</div><img src="yguens.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">YGUENS</div><div class="role">LEADER</div></div></div>
-<div class="card"><div class="num">11</div><img src="ralph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RALPH</div><div class="role">EX PRESIDENT</div></div></div>
-<div class="card"><div class="num">12</div><img src="valery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VALERY</div><div class="role">THE MOTIVATOR</div></div></div>
-<div class="card"><div class="num">13</div><img src="doodly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DOODLY</div><div class="role">MEDIA</div></div></div>
-<div class="card"><div class="num">14</div><img src="evens-elie.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">EVENS ELIE</div><div class="role">TI FRE</div></div></div>
-<div class="card"><div class="num">15</div><img src="sonsonn.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SONSONN</div><div class="role">SECRETARY</div></div></div>
-<div class="card"><div class="num">16</div><img src="komandan-landry.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN LANDRY</div><div class="role">COMMANDER</div></div></div>
-<div class="card"><div class="num">17</div><img src="jeff-colin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JEFF COLIN</div><div class="role">LEADER</div></div></div>
-<div class="card"><div class="num">18</div><img src="mambo-fifi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAMBO FIFI</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">19</div><img src="marassa.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MARASSA</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">20</div><img src="majistra-junior.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA JUNIOR</div><div class="role">MAGISTRATE</div></div></div>
-<div class="card"><div class="num">21</div><img src="majistra-mauclair.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA MAUCLAIR</div><div class="role">MAGISTRATE</div></div></div>
-<div class="card"><div class="num">22</div><img src="prezidan-ti-rat.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN TI RAT</div><div class="role">PRESIDENT</div></div></div>
-<div class="card"><div class="num">23</div><img src="perodin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PERODIN</div><div class="role">LEADER</div></div></div>
-<div class="card"><div class="num">24</div><img src="prezidan-aly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN ALY</div><div class="role">EX PRESIDENT</div></div></div>
-<div class="card"><div class="num">25</div><img src="jackson-montina.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JACKSON MONTINA</div><div class="role">THE PROFESSOR</div></div></div>
-<div class="card"><div class="num">26</div><img src="roosevelt.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ROOSEVELT</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">27</div><img src="fanfan-decoline.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FANFAN DECOLINE</div><div class="role">TREASURER HAITI</div></div></div>
-<div class="card"><div class="num">28</div><img src="cols.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">COLS</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">29</div><img src="cange.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">CANGE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">30</div><img src="ampere-doudou.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">AMPERE DOUDOU</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">31</div><img src="macu-mk.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MACU & MK</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">32</div><img src="may.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAY</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">33</div><img src="madina.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MADINA</div><div class="role">SPECIAL MEMBER</div></div></div>
-<div class="card"><div class="num">34</div><img src="ti-chery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI CHERY</div><div class="role">TOWO</div></div></div>
-<div class="card"><div class="num">35</div><img src="baron-plenn-lan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BARON PLENN LAN</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">36</div><img src="ti-reynold.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI REYNOLD</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">37</div><img src="kendy.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KENDY</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">38</div><img src="serette.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SERETTE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">39</div><img src="komandan-senkant.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN SENKANT</div><div class="role">COMMANDER</div></div></div>
-<div class="card"><div class="num">40</div><img src="guypson.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYPSON</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">41</div><img src="nadege.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">NADEGE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">42</div><img src="flore.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FLORE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">43</div><img src="guylene-samedi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYLENE SAMEDI</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">44</div><img src="la-belle-yole.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">LA BELLE YOLE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">45</div><img src="samba-serge.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SAMBA SERGE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">46</div><img src="ti-fre.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI FRE</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">47</div><img src="one-man.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ONE MAN</div><div class="role">MEMBER</div></div></div>
-<div class="card"><div class="num">48</div><img src="papouche-stratège.jpg" loading="lazy"><div class="overlay"><div class="name">PAPOUCHE STRATÈGE</div><div class="role">MOTÈ BANN LAN</div></div></div>
+<div class="card"><div class="num">01</div><img src="ti-lafrance.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI-LA FRANCE</div><div class="role">TET PANSANT</div></div></div>
+<div class="card"><div class="num">02</div><img src="jij-mayan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JIJ MAYAN</div><div class="role">TREZORYE</div></div></div>
+<div class="card"><div class="num">03</div><img src="vice-prezidan-tatane.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VICE PREZIDAN TATANE</div><div class="role">VICE PREZIDAN</div></div></div>
+<div class="card"><div class="num">04</div><img src="roro-lajan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RORO LAJAN</div><div class="role">MEDIATEUR</div></div></div>
+<div class="card"><div class="num">05</div><img src="desulme-derosier.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DESULME DEROSIER</div><div class="role">DIRIJAN</div></div></div>
+<div class="card"><div class="num">06</div><img src="warrens.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">WARRENS</div></div></div>
+<div class="card"><div class="num">07</div><img src="bouboul.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BOUBOUL</div><div class="role">KOLONEL</div></div></div>
+<div class="card"><div class="num">08</div><img src="joseph-marthone.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JOSEPH MARTHONE</div></div></div>
+<div class="card"><div class="num">09</div><img src="jude-joseph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JUDE JOSEPH</div></div></div>
+<div class="card"><div class="num">10</div><img src="yguens.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">YGUENS</div></div></div>
+<div class="card"><div class="num">11</div><img src="ralph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RALPH</div></div></div>
+<div class="card"><div class="num">12</div><img src="valery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VALERY</div><div class="role">MOTIVATEUR</div></div></div>
+<div class="card"><div class="num">13</div><img src="doodly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DOODLY</div></div></div>
+<div class="card"><div class="num">14</div><img src="evens-elie.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">EVENS ELIE</div></div></div>
+<div class="card"><div class="num">15</div><img src="sonsonn.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SONSONN</div><div class="role">SEKRETE</div></div></div>
+<div class="card"><div class="num">16</div><img src="komandan-landry.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN LANDRY</div></div></div>
+<div class="card"><div class="num">17</div><img src="jeff-colin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JEFF COLIN</div></div></div>
+<div class="card"><div class="num">18</div><img src="mambo-fifi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAMBO FIFI</div></div></div>
+<div class="card"><div class="num">19</div><img src="marassa.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MARASSA</div></div></div>
+<div class="card"><div class="num">20</div><img src="majistra-junior.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA JUNIOR</div></div></div>
+<div class="card"><div class="num">21</div><img src="majistra-mauclair.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA MAUCLAIR</div></div></div>
+<div class="card"><div class="num">22</div><img src="prezidan-ti-rat.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN TI RAT</div></div></div>
+<div class="card"><div class="num">23</div><img src="perodin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PERODIN</div></div></div>
+<div class="card"><div class="num">24</div><img src="prezidan-aly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN ALY</div></div></div>
+<div class="card"><div class="num">25</div><img src="jackson-montina.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JACKSON MONTINA</div></div></div>
+<div class="card"><div class="num">26</div><img src="roosevelt.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ROOSEVELT</div></div></div>
+<div class="card"><div class="num">27</div><img src="fanfan-decoline.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FANFAN DECOLINE</div></div></div>
+<div class="card"><div class="num">28</div><img src="cols.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">COLS</div></div></div>
+<div class="card"><div class="num">29</div><img src="cange.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">CANGE</div></div></div>
+<div class="card"><div class="num">30</div><img src="ampere-doudou.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">AMPERE DOUDOU</div></div></div>
+<div class="card"><div class="num">31</div><img src="macu-mk.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MACU & MK</div></div></div>
+<div class="card"><div class="num">32</div><img src="may.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAY</div></div></div>
+<div class="card"><div class="num">33</div><img src="madina.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MADINA</div></div></div>
+<div class="card"><div class="num">34</div><img src="ti-chery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI CHERY</div></div></div>
+<div class="card"><div class="num">35</div><img src="baron-plenn-lan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BARON PLENN LAN</div></div></div>
+<div class="card"><div class="num">36</div><img src="ti-reynold.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI REYNOLD</div></div></div>
+<div class="card"><div class="num">37</div><img src="kendy.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KENDY</div></div></div>
+<div class="card"><div class="num">38</div><img src="serette.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SERETTE</div></div></div>
+<div class="card"><div class="num">39</div><img src="komandan-senkant.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN SENKANT</div></div></div>
+<div class="card"><div class="num">40</div><img src="guypson.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYPSON</div></div></div>
+<div class="card"><div class="num">41</div><img src="nadege.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">NADEGE</div></div></div>
+<div class="card"><div class="num">42</div><img src="flore.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FLORE</div></div></div>
+<div class="card"><div class="num">43</div><img src="guylene-samedi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYLENE SAMEDI</div></div></div>
+<div class="card"><div class="num">44</div><img src="la-belle-yole.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">LA BELLE YOLE</div></div></div>
+<div class="card"><div class="num">45</div><img src="samba-serge.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SAMBA SERGE</div></div></div>
+<div class="card"><div class="num">46</div><img src="ti-fre.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI FRE</div></div></div>
+<div class="card"><div class="num">47</div><img src="one-man.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ONE MAN</div></div></div>
 </div>
 <footer>DOKIMANTÈ ISTWA BRIYANT SOLEY 1815 © 2026</footer>
 <script>
-function setL(b){document.querySelectorAll('.l').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
-let s=0;const slides=document.querySelectorAll('.slide');
-setInterval(()=>{slides[s].classList.remove('active');s=(s+1)%slides.length;slides[s].classList.add('active');},3000);
+function setLang(l,b){
+document.querySelectorAll('.l').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+document.querySelectorAll('[data-kre]').forEach(el=>{
+let v=el.getAttribute('data-'+l);
+if(v) el.textContent=v;
+});
+document.documentElement.lang=l;
+}
 </script>
 </body>
 </html>
