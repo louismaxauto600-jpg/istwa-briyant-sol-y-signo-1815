@@ -1,59 +1,210 @@
-<section id="bss-home" style="padding:70px 20px;text-align:center;background:linear-gradient(180deg,#0a0500,#1c0e00,#0a0500);color:#ffcf99">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BSS1815 PRO-MAX FM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+    }
 
-    <div style="max-width:900px;margin:0 auto">
-        <h1 style="color:#ff9e3e;font-size:2.8em;letter-spacing:4px;margin-bottom:15px">
-            BSS1815 — BRYIANT SOLÈY SIGNO
-        </h1>
+    /* HEADER GLOBAL */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background: linear-gradient(90deg, #ff7a00, #000000);
+    }
 
-        <p style="color:#ffb877;font-size:1em;font-style:italic;margin-bottom:40px">
-            Nwayo ofisyèl istwa, memwa, eritaj ak limyè BSS1815 PRO‑MAX DMP™
-        </p>
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        <div style="width:100%;aspect-ratio:16/7;background:linear-gradient(135deg,#2a1500,#0d0700);border:3px solid #ff9e3e;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:20px;margin-bottom:45px">
-            <span style="color:#c97a2e;font-size:.95em;font-style:italic">
-                Vizaj ofisyèl BSS1815 — limyè solèy la, twa etwal yo, senbòl eritaj la.  
-                (Imaj sa a reprezante BSS sèlman. Pa gen okenn lòt pwojè ladan l.)
-            </span>
-        </div>
+    .header-left img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
 
-        <h2 style="color:#ff9e3e;font-size:1.7em;margin-bottom:15px">
-            ISTWA BSS1815 — SOTI NAN LIMYÈ RASIN YO
-        </h2>
-        <p style="color:#ffcf99;line-height:1.7;max-width:850px;margin:0 auto">
-            BSS1815 se yon istwa ki sòti nan Léogâne, nan limyè solèy la, nan pawòl ki te di “Solèy la briye, papa!”.  
-            Se yon eritaj ki bati sou memwa, sou konbit, sou travay tè, sou ritm kominote a.  
-            Se yon non ki pa janm melanje ak okenn lòt pwojè. Se nwayo PRO‑MAX DMP.
-        </p>
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
 
-        <div style="margin-top:50px">
-            <h2 style="color:#ff9e3e;font-size:1.7em;margin-bottom:15px">
-                TWA ETWAL YO — SENBÒL OFISYÈL BSS
-            </h2>
-            <p style="color:#ffcf99;line-height:1.7;max-width:850px;margin:0 auto">
-                Yo reprezante limyè, fyète, idantite ak direksyon.  
-                Chak etwal se yon pati nan memwa BSS1815.  
-                Yo pa sèvi pou okenn lòt pwojè. Yo se mak BSS sèlman.
-            </p>
-        </div>
+    .brand-text .title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-        <div style="margin-top:50px">
-            <h2 style="color:#ff9e3e;font-size:1.7em;margin-bottom:15px">
-                SENBÒL SOLÈY BSS — LIMYÈ KI PA JANM ETE
-            </h2>
-            <p style="color:#ffcf99;line-height:1.7;max-width:850px;margin:0 auto">
-                Solèy la se nwayo vizyèl BSS. Li klere sou istwa a, sou eritaj la, sou memwa a.  
-                Li pa reprezante okenn lòt pwojè. Li se figi BSS1815 sèlman.
-            </p>
-        </div>
+    .brand-text .subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+    }
 
-        <div style="margin-top:60px;padding:40px 20px;border-top:3px solid #ff9e3e;border-bottom:3px solid #ff9e3e">
-            <h2 style="color:#ff9e3e;font-size:2em;letter-spacing:3px;margin-bottom:10px">
-                BSS1815 — ERITAJ KI PA JANM MELANJE
-            </h2>
-            <p style="color:#ffb877;font-weight:bold;letter-spacing:2px;margin-top:20px">
-                DEVAN DEVAN NÈT • BATI POU JODI A • PARE POU DEMEN
-            </p>
-        </div>
+    .header-right {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    .header-right a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .header-right a:hover {
+      color: #ffb347;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background: radial-gradient(circle at top left, #ff7a00 0%, #000000 55%, #000000 100%);
+    }
+
+    .hero-left {
+      max-width: 50%;
+    }
+
+    .hero-left h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .hero-left p {
+      font-size: 14px;
+      max-width: 420px;
+      opacity: 0.9;
+    }
+
+    .hero-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-main {
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff7a00, #ff4500);
+      color: #000000;
+    }
+
+    .btn-secondary {
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: 1px solid #ff7a00;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: transparent;
+      color: #ffb347;
+    }
+
+    .hero-right {
+      max-width: 45%;
+      text-align: right;
+    }
+
+    .hero-right .tagline {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffb347;
+      margin-bottom: 10px;
+    }
+
+    .hero-right .big-text {
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero-right .desc {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* FOOTER SIMPLE */
+    .footer {
+      padding: 15px 40px;
+      font-size: 11px;
+      text-align: center;
+      background: #050505;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER: LOGO A GOCH -->
+  <header class="header">
+    <div class="header-left">
+      <!-- MET CHEMEN VRÈ IMG LOGO A ISIT -->
+      <img src="images/bss1815-logo.png" alt="BSS1815 PRO-MAX Logo" />
+      <div class="brand-text">
+        <span class="title">BSS1815 PRO-MAX FM</span>
+        <span class="subtitle">BRIYANT SOLEY SIGNO 1815 • HISTORICAL DOCUMENTARY • DMP</span>
+      </div>
     </div>
 
-</section>
+    <nav class="header-right">
+      <a href="#home">Home</a>
+      <a href="#shows">Shows</a>
+      <a href="#podcasts">Podcasts</a>
+      <a href="#history">1815 Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <h1>BSS1815 PRO-MAX FM</h1>
+      <p>
+        Briyant Soley Signo 1815, PRO+MAX, DMP — devan devan net bati pou jodi a.
+        Yon platfòm istorik, dokimantè, mizik, vwa pèp la, tout sa ki soti nan flanm 1815 rive jodi a.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-main">Kòmanse Tande</button>
+        <button class="btn-secondary">Gade Dokimantè 1815</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="tagline">Difé 1815 • PRO-MAX • DMP</div>
+      <div class="big-text">Devann Devann Net Bati Pou Jodi A</div>
+      <div class="desc">
+        Platfòm ou pou istwa, memwa, ak vwa ki pa janm etenn. BSS1815 se siy dife ki kontinye klere.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © BSS1815 PRO-MAX FM • Briyant Soley Signo 1815 • DMP
+  </footer>
+
+</body>
+</html>
