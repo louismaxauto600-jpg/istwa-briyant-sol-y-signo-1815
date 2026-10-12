@@ -46,9 +46,11 @@
 
   .logo { width:110px; height:110px; object-fit:cover; border-radius:50%; border:3px solid #ffa54f; margin-bottom:15px; }
   .lang-toggle { text-align:center; margin:10px 0 20px 0; }
-  .lang-toggle button { padding:9px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; border:2px solid #ffa54f; color:#fff; text-shadow:1px 1px 2px #000; font-size:14px; }
+  .lang-toggle button { padding:9px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; border:2px solid #ffa54f; color:#fff; text-shadow:1px 1px 2px #000; font-size:14px; position:relative; overflow:hidden; }
+  .lang-toggle button span { position:relative; z-index:2; }
   #btnHt { background:linear-gradient(to right,#00209F 50%,#D21034 50%); }
-  #btnEn { background:linear-gradient(to right,#3C3B6E 50%,#B22234 50%); }
+  #btnEn { background:repeating-linear-gradient(to bottom,#B22234 0 5px,#ffffff 5px 10px); }
+  #btnEn::before { content:""; position:absolute; top:0; left:0; width:38%; height:55%; background:#3C3B6E; z-index:1; border-radius:6px 0 0 0; }
   #btnFr { background:linear-gradient(to right,#0055A4 33%,#f2f2f2 33%,#f2f2f2 66%,#EF4135 66%); color:#111; text-shadow:none; }
   .lang-toggle button.active { box-shadow:0 0 0 3px #ffa54f, 0 0 14px #ffa54f; }
   .slideshow-wrap { max-width:700px; margin:30px auto; text-align:center; padding:0 15px; }
@@ -74,9 +76,9 @@
 <header>
   <img src="istwa-bss1815.jpg" alt="BSS1815 Logo" class="logo">
   <div class="lang-toggle">
-    <button type="button" id="btnHt" class="active" onclick="setLang('ht')">KREYÒL</button>
-    <button type="button" id="btnEn" onclick="setLang('en')">ENGLISH</button>
-    <button type="button" id="btnFr" onclick="setLang('fr')">FRANÇAIS</button>
+    <button type="button" id="btnHt" class="active" onclick="setLang('ht')"><span>KREYÒL</span></button>
+    <button type="button" id="btnEn" onclick="setLang('en')"><span>ENGLISH</span></button>
+    <button type="button" id="btnFr" onclick="setLang('fr')"><span>FRANÇAIS</span></button>
   </div>
   <h1>BRIYANT SOLEY 1815</h1>
   <p data-ht="BSS1815 PRO-MAX • Dokimantè Istwa Briyant" data-en="BSS1815 PRO-MAX • Briyant History Documentary" data-fr="BSS1815 PRO-MAX • Documentaire Histoire Briyant">BSS1815 PRO-MAX • Dokimantè Istwa Briyant</p>
@@ -165,29 +167,41 @@ function nextFelix(){
 }
 function startShow(){
   var c = document.getElementById('felixCount');
-  if(felixList.length === 0){
-    if(c) c.textContent = '—';
-    return;
-  }
+  if(felixList.length === 0){ if(c) c.textContent = '—'; return; }
   showFelix();
   setInterval(nextFelix, 10000);
 }
-/* Verifye chak fichye anvan slideshow la kòmanse: sa ki pa egziste pa antre nan lis la, konsa li pa sote pandan l ap jwe */
+/* Verifye FOTO ak VIDEO yo anvan slideshow la kòmanse: sa ki pa egziste pa antre nan lis la */
 (function preload(){
-  var ok = new Array(felixPhotos.length).fill(false);
-  var pending = felixPhotos.length;
-  function done(){
-    if(--pending === 0){
-      felixList = felixPhotos.filter(function(f, i){ return ok[i]; });
+  var n = felixPhotos.length;
+  var ok = new Array(n).fill(false);
+  var resolved = new Array(n).fill(false);
+  var pending = n;
+  var started = false;
+  function resolve(i, good){
+    if(resolved[i]) return;
+    resolved[i] = true; ok[i] = good;
+    if(--pending === 0 && !started){
+      started = true;
+      felixList = felixPhotos.filter(function(f, j){ return ok[j]; });
       startShow();
     }
   }
   felixPhotos.forEach(function(f, i){
-    if(f.toLowerCase().slice(-4) === '.mp4'){ ok[i] = true; done(); return; }
-    var t = new Image();
-    t.onload = function(){ ok[i] = true; done(); };
-    t.onerror = function(){ done(); };
-    t.src = f;
+    if(f.toLowerCase().slice(-4) === '.mp4'){
+      var v = document.createElement('video');
+      v.preload = 'metadata';
+      v.onloadedmetadata = function(){ resolve(i, true); };
+      v.onerror = function(){ resolve(i, false); };
+      v.src = f;
+      setTimeout(function(){ resolve(i, false); }, 8000);
+    } else {
+      var t = new Image();
+      t.onload = function(){ resolve(i, true); };
+      t.onerror = function(){ resolve(i, false); };
+      t.src = f;
+      setTimeout(function(){ resolve(i, false); }, 8000);
+    }
   });
 })();
 
@@ -196,11 +210,18 @@ function updateMusicBtn(){
   var b = document.getElementById('musicBtn');
   var play = {ht:'♫ JWE MIZIK', en:'♫ PLAY MUSIC', fr:'♫ JOUER MUSIQUE'};
   var stop = {ht:'♫ KOUPE MIZIK', en:'♫ STOP MUSIC', fr:'♫ ["anpere-doudou.jpeg", "andre-asouman.jpeg", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"]ÊTER MUSIQUE'};
+  var miss = {ht:'⚠ FICHYE MIZIK LA PA SOU SIT LA', en:'⚠ MUSIC FILE NOT ON SITE', fr:'⚠ FICHIER MUSIQUE INTROUVABLE'};
+  if(a.dataset.missing === '1'){ b.textContent = miss[curLang]; return; }
   b.textContent = a.paused ? play[curLang] : stop[curLang];
 }
+document.getElementById('felixMusic').querySelector('source').addEventListener('error', function(){
+  document.getElementById('felixMusic').dataset.missing = '1';
+  updateMusicBtn();
+});
 function toggleMusic(){
   var a = document.getElementById('felixMusic');
-  if(a.paused){ a.play(); } else { a.pause(); }
+  if(a.dataset.missing === '1'){ updateMusicBtn(); return; }
+  if(a.paused){ a.play().catch(function(){}); } else { a.pause(); }
   updateMusicBtn();
 }
 function setLang(l){
