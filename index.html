@@ -50,7 +50,8 @@
   .lang-toggle button.active { background:#ffa54f; color:#000; }
   .slideshow-wrap { max-width:700px; margin:30px auto; text-align:center; padding:0 15px; }
   .slideshow-wrap h2 { color:#ffa54f; letter-spacing:3px; margin-bottom:15px; }
-  #felixSlide { width:100%; max-height:420px; object-fit:cover; border:2px solid #ffa54f; border-radius:12px; background:#111; }
+  #felixSlide, #felixVideo { width:100%; max-height:420px; object-fit:cover; border:2px solid #ffa54f; border-radius:12px; background:#111; }
+  #felixVideo { display:none; }
   .social-net { text-align:center; padding:30px 15px; border-top:1px solid #ffa54f; margin-top:10px; }
   .social-net h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:18px; }
   .social-net a { display:inline-block; margin:8px 10px; text-decoration:none; font-weight:bold; font-size:15px; padding:8px 14px; border-radius:8px; background:#0a0a0a; border:1px solid #333; }
@@ -97,7 +98,12 @@
 <section class="slideshow-wrap">
   <h2 data-ht="FANMI FELIX" data-en="FELIX FAMILY" data-fr="FAMILLE FELIX">FANMI FELIX</h2>
   <img id="felixSlide" src="anpere-doudou.jpeg" alt="Fanmi Felix">
-  <p style="color:#ffb46a;margin-top:10px;font-size:14px;" data-ht="Eritaj fanmi Felix nan BSS1815" data-en="The Felix family heritage in BSS1815" data-fr="L'héritage de la famille Felix au BSS1815">Eritaj fanmi Felix nan BSS1815</p>
+  <video id="felixVideo" controls muted playsinline></video>
+  <div style="margin-top:12px;">
+    <button id="musicBtn" onclick="toggleMusic()" style="background:#1a0d00;color:#ffa54f;border:2px solid #ffa54f;padding:10px 24px;border-radius:8px;font-weight:bold;cursor:pointer;">&#9835; JWE MIZIK</button>
+    <audio id="felixMusic" loop preload="auto"><source src="mizik-slideshow.mp3" type="audio/mpeg"></audio>
+  </div>
+  <p style="color:#ffb46a;margin-top:10px;font-size:14px;" data-ht="Eritaj fanmi Felix nan BSS1815" data-en="The Felix family heritage in BSS1815" data-fr="L'h&eacute;ritage de la famille Felix au BSS1815">Eritaj fanmi Felix nan BSS1815</p>
 </section>
 
 <section class="social-net">
@@ -115,7 +121,7 @@
 </section>
 
 <section class="phones">
-  <h3>TELEFÒN 24/7</h3>
+  <h3>TELEF&Ograve;N 24/7</h3>
   <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;">[TEL]</span> (317) 538-1150</p>
   <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;">[TEL]</span> (516) 216-8494</p>
   <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;">[TEL]</span> (407) 640-5166</p>
@@ -124,13 +130,32 @@
 </section>
 
 <script>
-var felixPhotos = ["anpere-doudou.jpeg", "andre-asouman", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "tide-&-tido.png"];
+var felixPhotos = ["anpere-doudou.jpeg", "andre-asouman", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"];
 var felixIdx = 0;
-setInterval(function(){
+function showFelix(){
+  var f = felixPhotos[felixIdx];
+  var img = document.getElementById('felixSlide');
+  var vid = document.getElementById('felixVideo');
+  if(f.toLowerCase().endsWith('.mp4')){
+    img.style.display = 'none'; vid.style.display = 'block';
+    vid.src = f; vid.play().catch(function(){});
+  } else {
+    vid.pause(); vid.style.display = 'none'; img.style.display = 'block';
+    img.src = f;
+  }
+}
+function nextFelix(){
   felixIdx = (felixIdx+1) % felixPhotos.length;
-  var el = document.getElementById('felixSlide');
-  if(el) el.src = felixPhotos[felixIdx];
-}, 4000);
+  showFelix();
+}
+setInterval(nextFelix, 10000);
+document.getElementById('felixSlide').onerror = function(){ nextFelix(); };
+function toggleMusic(){
+  var a = document.getElementById('felixMusic');
+  var b = document.getElementById('musicBtn');
+  if(a.paused){ a.play(); b.innerHTML = '&#9835; KOUPE MIZIK'; }
+  else { a.pause(); b.innerHTML = '&#9835; JWE MIZIK'; }
+}
 function setLang(l){
   document.getElementById('btnHt').classList.toggle('active', l==='ht');
   document.getElementById('btnEn').classList.toggle('active', l==='en');
