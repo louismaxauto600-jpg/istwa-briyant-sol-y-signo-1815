@@ -46,27 +46,37 @@
 
   .logo { width:110px; height:110px; object-fit:cover; border-radius:50%; border:3px solid #ffa54f; margin-bottom:15px; }
   .lang-toggle { text-align:center; margin:10px 0 20px 0; }
-  .lang-toggle button { background:#1a0d00; color:#ffa54f; border:2px solid #ffa54f; padding:8px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; }
-  .lang-toggle button.active { background:#ffa54f; color:#000; }
+  .lang-toggle button { padding:9px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; border:2px solid #ffa54f; color:#fff; text-shadow:1px 1px 2px #000; font-size:14px; }
+  #btnHt { background:linear-gradient(to right,#00209F 50%,#D21034 50%); }
+  #btnEn { background:linear-gradient(to right,#3C3B6E 50%,#B22234 50%); }
+  #btnFr { background:linear-gradient(to right,#0055A4 33%,#f2f2f2 33%,#f2f2f2 66%,#EF4135 66%); color:#111; text-shadow:none; }
+  .lang-toggle button.active { box-shadow:0 0 0 3px #ffa54f, 0 0 14px #ffa54f; }
   .slideshow-wrap { max-width:700px; margin:30px auto; text-align:center; padding:0 15px; }
   .slideshow-wrap h2 { color:#ffa54f; letter-spacing:3px; margin-bottom:15px; }
   #felixSlide, #felixVideo { width:100%; height:420px; object-fit:contain; border:2px solid #ffa54f; border-radius:12px; background:#000; }
   #felixVideo { display:none; }
+  #felixCount { color:#ffa54f; font-size:13px; margin-top:8px; }
+  #musicBtn { background:#1a0d00; color:#ffa54f; border:2px solid #ffa54f; padding:10px 24px; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:12px; }
   .social-net { text-align:center; padding:30px 15px; border-top:1px solid #ffa54f; margin-top:10px; }
   .social-net h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:18px; }
   .social-net a { display:inline-block; margin:8px 10px; text-decoration:none; font-weight:bold; font-size:15px; padding:8px 14px; border-radius:8px; background:#0a0a0a; border:1px solid #333; }
   .phones { text-align:center; padding:20px 15px; }
   .phones h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:12px; }
-  .phones p { margin:6px 0; font-size:15px; color:#f5d0a0; }
+  .phones p { margin:8px 0; font-size:16px; color:#f5d0a0; }
+  .flag { display:inline-block; width:36px; height:23px; border-radius:3px; vertical-align:middle; margin-right:10px; border:1px solid #666; }
+  .flag-usa { background:repeating-linear-gradient(to bottom,#B22234 0 3.2px,#ffffff 3.2px 6.4px); position:relative; }
+  .flag-usa::after { content:""; position:absolute; top:0; left:0; width:15px; height:12px; background:#3C3B6E; border-radius:2px 0 0 0; }
+  .flag-ht { background:linear-gradient(to bottom,#00209F 50%,#D21034 50%); }
+  .tel-sym { color:#25D366; font-size:20px; margin-right:8px; vertical-align:middle; }
 </style>
 </head>
 <body class="fade-bg">
 <header>
   <img src="istwa-bss1815.jpg" alt="BSS1815 Logo" class="logo">
   <div class="lang-toggle">
-    <button id="btnHt" class="active" onclick="setLang('ht')">KREYÒL</button>
-    <button id="btnEn" onclick="setLang('en')">ENGLISH</button>
-    <button id="btnFr" onclick="setLang('fr')">FRANÇAIS</button>
+    <button type="button" id="btnHt" class="active" onclick="setLang('ht')">KREYÒL</button>
+    <button type="button" id="btnEn" onclick="setLang('en')">ENGLISH</button>
+    <button type="button" id="btnFr" onclick="setLang('fr')">FRANÇAIS</button>
   </div>
   <h1>BRIYANT SOLEY 1815</h1>
   <p data-ht="BSS1815 PRO-MAX • Dokimantè Istwa Briyant" data-en="BSS1815 PRO-MAX • Briyant History Documentary" data-fr="BSS1815 PRO-MAX • Documentaire Histoire Briyant">BSS1815 PRO-MAX • Dokimantè Istwa Briyant</p>
@@ -99,16 +109,14 @@
   <h2 data-ht="FANMI FELIX" data-en="FELIX FAMILY" data-fr="FAMILLE FELIX">FANMI FELIX</h2>
   <img id="felixSlide" src="anpere-doudou.jpeg" alt="Fanmi Felix">
   <video id="felixVideo" controls muted playsinline></video>
-  <p id="felixCount" style="color:#ffa54f;font-size:13px;margin-top:8px;">1 / 25</p>
-  <div style="margin-top:12px;">
-    <button id="musicBtn" onclick="toggleMusic()" style="background:#1a0d00;color:#ffa54f;border:2px solid #ffa54f;padding:10px 24px;border-radius:8px;font-weight:bold;cursor:pointer;">&#9835; JWE MIZIK</button>
-    <audio id="felixMusic" loop preload="auto"><source src="mizik-slideshow.mp3" type="audio/mpeg"></audio>
-  </div>
-  <p style="color:#ffb46a;margin-top:10px;font-size:14px;" data-ht="Eritaj fanmi Felix nan BSS1815" data-en="The Felix family heritage in BSS1815" data-fr="L'h&eacute;ritage de la famille Felix au BSS1815">Eritaj fanmi Felix nan BSS1815</p>
+  <p id="felixCount">—</p>
+  <button type="button" id="musicBtn" onclick="toggleMusic()">&#9835; JWE MIZIK</button>
+  <audio id="felixMusic" loop preload="auto"><source src="mizik-slideshow.mp3" type="audio/mpeg"></audio>
+  <p style="color:#ffb46a;margin-top:10px;font-size:14px;" data-ht="Eritaj fanmi Felix nan BSS1815" data-en="The Felix family heritage in BSS1815" data-fr="L'h&#233;ritage de la famille Felix au BSS1815">Eritaj fanmi Felix nan BSS1815</p>
 </section>
 
 <section class="social-net">
-  <h3 data-ht="REZO SOSYO" data-en="SOCIAL NETWORKS" data-fr="RÉSEAUX SOCIAUX">REZO SOSYO</h3>
+  <h3 data-ht="REZO SOSYO" data-en="SOCIAL NETWORKS" data-fr="R&#201;SEAUX SOCIAUX">REZO SOSYO</h3>
   <a href="#" style="color:#25D366;">[WhatsApp]</a>
   <a href="https://www.facebook.com/100082736164062" style="color:#1877F2;">[Facebook]</a>
   <a href="#" style="color:#FE2C55;">[TikTok]</a>
@@ -122,52 +130,91 @@
 </section>
 
 <section class="phones">
-  <h3 data-ht="TELEF&#210;N 24/7" data-en="PHONES 24/7" data-fr="TÉLÉPHONES 24/7">TELEF&Ograve;N 24/7</h3>
-  <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;font-size:20px;">&#9742;</span> (317) 538-1150</p>
-  <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;font-size:20px;">&#9742;</span> (516) 216-8494</p>
-  <p><span style="color:#B22234;">[USA]</span> <span style="color:#25D366;font-size:20px;">&#9742;</span> (407) 640-5166</p>
-  <p><span style="color:#00209F;">[HT]</span> <span style="color:#25D366;font-size:20px;">&#9742;</span> +509 4343-7488</p>
-  <p><span style="color:#00209F;">[HT]</span> <span style="color:#25D366;font-size:20px;">&#9742;</span> +509 4254-4447</p>
+  <h3 data-ht="TELEF&#210;N 24/7" data-en="PHONES 24/7" data-fr="T&#201;L&#201;PHONES 24/7">TELEF&#210;N 24/7</h3>
+  <p><span class="flag flag-usa"></span><span class="tel-sym">&#9742;</span>(317) 538-1150</p>
+  <p><span class="flag flag-usa"></span><span class="tel-sym">&#9742;</span>(516) 216-8494</p>
+  <p><span class="flag flag-usa"></span><span class="tel-sym">&#9742;</span>(407) 640-5166</p>
+  <p><span class="flag flag-ht"></span><span class="tel-sym">&#9742;</span>+509 4343-7488</p>
+  <p><span class="flag flag-ht"></span><span class="tel-sym">&#9742;</span>+509 4254-4447</p>
 </section>
 
 <script>
-var felixPhotos = ["anpere-doudou.jpeg", "andre-asouman", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"];
+var felixPhotos = ["anpere-doudou.jpeg", "andre-asouman.jpeg", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"];
+var felixList = [];
 var felixIdx = 0;
+var curLang = 'ht';
+
 function showFelix(){
-  var f = felixPhotos[felixIdx];
+  var f = felixList[felixIdx];
   var img = document.getElementById('felixSlide');
   var vid = document.getElementById('felixVideo');
-  if(f.toLowerCase().endsWith('.mp4')){
+  if(f.toLowerCase().slice(-4) === '.mp4'){
     img.style.display = 'none'; vid.style.display = 'block';
     vid.src = f; vid.play().catch(function(){});
   } else {
-    vid.pause(); vid.style.display = 'none'; img.style.display = 'block';
+    try{ vid.pause(); }catch(e){}
+    vid.style.display = 'none'; img.style.display = 'block';
     img.src = f;
   }
+  var c = document.getElementById('felixCount');
+  if(c) c.textContent = (felixIdx+1) + ' / ' + felixList.length;
 }
 function nextFelix(){
-  felixIdx = (felixIdx+1) % felixPhotos.length;
+  felixIdx = (felixIdx+1) % felixList.length;
   showFelix();
-  var c = document.getElementById('felixCount');
-  if(c) c.textContent = (felixIdx+1) + ' / ' + felixPhotos.length;
 }
-setInterval(nextFelix, 10000);
-document.getElementById('felixSlide').onerror = function(){ nextFelix(); };
-function toggleMusic(){
+function startShow(){
+  var c = document.getElementById('felixCount');
+  if(felixList.length === 0){
+    if(c) c.textContent = '—';
+    return;
+  }
+  showFelix();
+  setInterval(nextFelix, 10000);
+}
+/* Verifye chak fichye anvan slideshow la kòmanse: sa ki pa egziste pa antre nan lis la, konsa li pa sote pandan l ap jwe */
+(function preload(){
+  var ok = new Array(felixPhotos.length).fill(false);
+  var pending = felixPhotos.length;
+  function done(){
+    if(--pending === 0){
+      felixList = felixPhotos.filter(function(f, i){ return ok[i]; });
+      startShow();
+    }
+  }
+  felixPhotos.forEach(function(f, i){
+    if(f.toLowerCase().slice(-4) === '.mp4'){ ok[i] = true; done(); return; }
+    var t = new Image();
+    t.onload = function(){ ok[i] = true; done(); };
+    t.onerror = function(){ done(); };
+    t.src = f;
+  });
+})();
+
+function updateMusicBtn(){
   var a = document.getElementById('felixMusic');
   var b = document.getElementById('musicBtn');
-  if(a.paused){ a.play(); b.innerHTML = '&#9835; KOUPE MIZIK'; }
-  else { a.pause(); b.innerHTML = '&#9835; JWE MIZIK'; }
+  var play = {ht:'♫ JWE MIZIK', en:'♫ PLAY MUSIC', fr:'♫ JOUER MUSIQUE'};
+  var stop = {ht:'♫ KOUPE MIZIK', en:'♫ STOP MUSIC', fr:'♫ ["anpere-doudou.jpeg", "andre-asouman.jpeg", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"]ÊTER MUSIQUE'};
+  b.textContent = a.paused ? play[curLang] : stop[curLang];
+}
+function toggleMusic(){
+  var a = document.getElementById('felixMusic');
+  if(a.paused){ a.play(); } else { a.pause(); }
+  updateMusicBtn();
 }
 function setLang(l){
-  document.getElementById('btnHt').classList.toggle('active', l==='ht');
-  document.getElementById('btnEn').classList.toggle('active', l==='en');
-  document.getElementById('btnFr').classList.toggle('active', l==='fr');
+  curLang = l;
+  var btns = {ht:'btnHt', en:'btnEn', fr:'btnFr'};
+  for(var k in btns){
+    document.getElementById(btns[k]).classList.toggle('active', k === l);
+  }
   document.querySelectorAll('[data-ht]').forEach(function(el){
-    var v = el.getAttribute('data-'+l);
-    if(v) el.innerHTML = v;
+    var v = el.getAttribute('data-' + l);
+    if(v !== null) el.innerHTML = v;
   });
   document.documentElement.lang = l;
+  updateMusicBtn();
 }
 </script>
 <footer>BSS1815 PRO-MAX DMP • bss1815promaxdmp.com</footer>
