@@ -1,75 +1,54 @@
 <!DOCTYPE html>
 <html lang="ht">
-<head><style>
-@font-face {
-  font-family: "Optimistic";
-  font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Optimistic Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
-}
-:where(html) {
-  font-family: "Optimistic", system-ui, sans-serif;
-}
-:where(code, pre, kbd, samp) {
-  font-family: "Optimistic Mono", ui-monospace, monospace;
-}
-</style>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BRIYANT SOLEY 1815 - BSS1815</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
   body { background:#000; color:#f5d0a0; font-family:Arial,sans-serif; }
-  .fade-bg { background: linear-gradient(135deg, #1a0d00 0%, #000000 40%, #3d1e00 70%, #000000 100%); }
+ .fade-bg { background: linear-gradient(135deg, #1a0d00 0%, #000000 40%, #3d1e00 70%, #000000 100%); }
   header { text-align:center; padding:50px 20px; }
   header h1 { color:#ffa54f; letter-spacing:4px; font-size:32px; }
   header p { color:#ffb46a; margin-top:10px; }
-  .memo { max-width:900px; margin:30px auto; background:#0a0a0a; border:2px solid #ffa54f; border-radius:14px; padding:40px 30px; text-align:center; }
-  .memo h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:10px; }
-  .memo h2 { color:#ffb46a; margin-bottom:20px; }
-  .memo p { color:#f5d0a0; line-height:1.8; font-size:15px; }
-  .heroes { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; padding:20px; margin-bottom:60px; }
-  .card { width:280px; background:#111; border:2px solid #ffa54f; border-radius:12px; overflow:hidden; }
-  .card img { width:100%; display:block; }
-  .card div { padding:18px; text-align:center; }
-  .card h3 { color:#ffa54f; margin:0; }
-  .card p { color:#ffb46a; font-size:14px; margin-top:6px; }
+ .memo { max-width:900px; margin:30px auto; background:#0a0a0a; border:2px solid #ffa54f; border-radius:14px; padding:40px 30px; text-align:center; }
+ .memo h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:10px; }
+ .memo h2 { color:#ffb46a; margin-bottom:20px; }
+ .memo p { color:#f5d0a0; line-height:1.8; font-size:15px; }
+ .heroes { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; padding:20px; margin-bottom:60px; }
+ .card { width:280px; background:#111; border:2px solid #ffa54f; border-radius:12px; overflow:hidden; }
+ .card img { width:100%; display:block; }
+ .card div { padding:18px; text-align:center; }
+ .card h3 { color:#ffa54f; margin:0; }
+ .card p { color:#ffb46a; font-size:14px; margin-top:6px; }
   footer { text-align:center; padding:30px; color:#ffa54f; font-size:13px; border-top:1px solid #ffa54f; }
 
-  .logo { width:110px; height:110px; object-fit:cover; border-radius:50%; border:3px solid #ffa54f; margin-bottom:15px; }
-  .lang-toggle { text-align:center; margin:10px 0 20px 0; }
-  .lang-toggle button { padding:9px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; border:2px solid #ffa54f; color:#fff; text-shadow:1px 1px 2px #000; font-size:14px; position:relative; overflow:hidden; }
-  .lang-toggle button span { position:relative; z-index:2; }
+ .logo { width:110px; height:110px; object-fit:cover; border-radius:50%; border:3px solid #ffa54f; margin-bottom:15px; }
+ .lang-toggle { text-align:center; margin:10px 0 20px 0; }
+ .lang-toggle button { padding:9px 18px; margin:0 4px; border-radius:8px; cursor:pointer; font-weight:bold; border:2px solid #ffa54f; color:#fff; text-shadow:1px 1px 2px #000; font-size:14px; position:relative; overflow:hidden; }
+ .lang-toggle button span { position:relative; z-index:2; }
   #btnHt { background:linear-gradient(to right,#00209F 50%,#D21034 50%); }
   #btnEn { background:repeating-linear-gradient(to bottom,#B22234 0 5px,#ffffff 5px 10px); }
   #btnEn::before { content:""; position:absolute; top:0; left:0; width:38%; height:55%; background:#3C3B6E; z-index:1; border-radius:6px 0 0 0; }
   #btnFr { background:linear-gradient(to right,#0055A4 33%,#f2f2f2 33%,#f2f2f2 66%,#EF4135 66%); color:#111; text-shadow:none; }
-  .lang-toggle button.active { box-shadow:0 0 0 3px #ffa54f, 0 0 14px #ffa54f; }
-  .slideshow-wrap { max-width:700px; margin:30px auto; text-align:center; padding:0 15px; }
-  .slideshow-wrap h2 { color:#ffa54f; letter-spacing:3px; margin-bottom:15px; }
+ .lang-toggle button.active { box-shadow:0 0 0 3px #ffa54f, 0 0 14px #ffa54f; }
+ .slideshow-wrap { max-width:700px; margin:30px auto; text-align:center; padding:0 15px; }
+ .slideshow-wrap h2 { color:#ffa54f; letter-spacing:3px; margin-bottom:15px; }
   #felixSlide, #felixVideo { width:100%; height:420px; object-fit:contain; border:2px solid #ffa54f; border-radius:12px; background:#000; }
   #felixVideo { display:none; }
   #felixCount { color:#ffa54f; font-size:13px; margin-top:8px; }
   #musicBtn { background:#1a0d00; color:#ffa54f; border:2px solid #ffa54f; padding:10px 24px; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:12px; }
-  .social-net { text-align:center; padding:30px 15px; border-top:1px solid #ffa54f; margin-top:10px; }
-  .social-net h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:18px; }
-  .social-net a { display:inline-block; margin:8px 10px; text-decoration:none; font-weight:bold; font-size:15px; padding:8px 14px; border-radius:8px; background:#0a0a0a; border:1px solid #333; }
-  .phones { text-align:center; padding:20px 15px; }
-  .phones h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:12px; }
-  .phones p { margin:8px 0; font-size:16px; color:#f5d0a0; }
-  .flag { display:inline-block; width:36px; height:23px; border-radius:3px; vertical-align:middle; margin-right:10px; border:1px solid #666; }
-  .flag-usa { background:repeating-linear-gradient(to bottom,#B22234 0 3.2px,#ffffff 3.2px 6.4px); position:relative; }
-  .flag-usa::after { content:""; position:absolute; top:0; left:0; width:15px; height:12px; background:#3C3B6E; border-radius:2px 0 0 0; }
-  .flag-ht { background:linear-gradient(to bottom,#00209F 50%,#D21034 50%); }
-  .tel-sym { color:#25D366; font-size:20px; margin-right:8px; vertical-align:middle; }
+ .social-net { text-align:center; padding:30px 15px; border-top:1px solid #ffa54f; margin-top:10px; }
+ .social-net h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:18px; }
+ .social-net a { display:inline-block; margin:8px 10px; text-decoration:none; font-weight:bold; font-size:15px; padding:8px 14px; border-radius:8px; background:#0a0a0a; border:1px solid #333; }
+ .phones { text-align:center; padding:20px 15px; }
+ .phones h3 { color:#ffa54f; letter-spacing:3px; margin-bottom:12px; }
+ .phones p { margin:8px 0; font-size:16px; color:#f5d0a0; }
+ .flag { display:inline-block; width:36px; height:23px; border-radius:3px; vertical-align:middle; margin-right:10px; border:1px solid #666; }
+ .flag-usa { background:repeating-linear-gradient(to bottom,#B22234 0 3.2px,#ffffff 3.2px 6.4px); position:relative; }
+ .flag-usa::after { content:""; position:absolute; top:0; left:0; width:15px; height:12px; background:#3C3B6E; border-radius:2px 0 0 0; }
+ .flag-ht { background:linear-gradient(to bottom,#00209F 50%,#D21034 50%); }
+ .tel-sym { color:#25D366; font-size:20px; margin-right:8px; vertical-align:middle; }
 </style>
 </head>
 <body class="fade-bg">
@@ -106,7 +85,6 @@
   </div>
 </section>
 
-
 <section class="slideshow-wrap">
   <h2 data-ht="FANMI FELIX" data-en="FELIX FAMILY" data-fr="FAMILLE FELIX">FANMI FELIX</h2>
   <img id="felixSlide" src="anpere-doudou.jpeg" alt="Fanmi Felix">
@@ -128,7 +106,7 @@
   <a href="#" style="color:#229ED9;">[Telegram]</a>
   <a href="#" style="color:#ffffff;">[X/Twitter]</a>
   <a href="#" style="color:#5C6CE5;">[Truth Social]</a>
-  <a href="#" style="color:#0A66C2;">[LinkedIn]</a>
+  <a href="#" style="color:#0A66C0;">[LinkedIn]</a>
 </section>
 
 <section class="phones">
@@ -181,7 +159,7 @@ function startShow(){
   function resolve(i, good){
     if(resolved[i]) return;
     resolved[i] = true; ok[i] = good;
-    if(--pending === 0 && !started){
+    if(--pending === 0 &&!started){
       started = true;
       felixList = felixPhotos.filter(function(f, j){ return ok[j]; });
       startShow();
@@ -209,10 +187,10 @@ function updateMusicBtn(){
   var a = document.getElementById('felixMusic');
   var b = document.getElementById('musicBtn');
   var play = {ht:'♫ JWE MIZIK', en:'♫ PLAY MUSIC', fr:'♫ JOUER MUSIQUE'};
-  var stop = {ht:'♫ KOUPE MIZIK', en:'♫ STOP MUSIC', fr:'♫ ["anpere-doudou.jpeg", "andre-asouman.jpeg", "andy-jean.jpeg", "bss-digital-heritage.jpeg", "cange-d.jpeg", "colonel.png", "cols.jpeg", "doodly.jpeg", "emaze.jpeg", "desulme-derosier.png", "komandan-senkant.png", "koukou-flying.mp4", "la-force-du-son.png", "mambo-fif.jpeg", "michel-II.jpeg", "one-man.png", "ones-asoumab.jpeg", "sindy.jpeg", "sonsonn.jpeg", "tania-felix.png", "team-backup", "teamsanpresyon.jpeg", "the-change.jpeg", "the-founder.mp4", "tide-&-tido.png"]ÊTER MUSIQUE'};
+  var stop = {ht:'♫ KOUPE MIZIK', en:'♫ STOP MUSIC', fr:'♫ ARRÊTER MUSIQUE'};
   var miss = {ht:'⚠ FICHYE MIZIK LA PA SOU SIT LA', en:'⚠ MUSIC FILE NOT ON SITE', fr:'⚠ FICHIER MUSIQUE INTROUVABLE'};
   if(a.dataset.missing === '1'){ b.textContent = miss[curLang]; return; }
-  b.textContent = a.paused ? play[curLang] : stop[curLang];
+  b.textContent = a.paused? play[curLang] : stop[curLang];
 }
 document.getElementById('felixMusic').querySelector('source').addEventListener('error', function(){
   document.getElementById('felixMusic').dataset.missing = '1';
@@ -232,12 +210,12 @@ function setLang(l){
   }
   document.querySelectorAll('[data-ht]').forEach(function(el){
     var v = el.getAttribute('data-' + l);
-    if(v !== null) el.innerHTML = v;
+    if(v!== null) el.innerHTML = v;
   });
   document.documentElement.lang = l;
   updateMusicBtn();
 }
 </script>
 <footer>BSS1815 PRO-MAX DMP • bss1815promaxdmp.com</footer>
-<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
+</body>
 </html>
