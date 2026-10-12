@@ -1,210 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ht">
 <head>
-  <meta charset="UTF-8" />
-  <title>BSS1815 PRO-MAX FM</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000000;
-      color: #ffffff;
-    }
-
-    /* HEADER GLOBAL */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 40px;
-      background: linear-gradient(90deg, #ff7a00, #000000);
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .header-left img {
-      height: 80px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .brand-text .title {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .brand-text .subtitle {
-      font-size: 12px;
-      opacity: 0.8;
-    }
-
-    .header-right {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-    }
-
-    .header-right a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .header-right a:hover {
-      color: #ffb347;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 40px;
-      background: radial-gradient(circle at top left, #ff7a00 0%, #000000 55%, #000000 100%);
-    }
-
-    .hero-left {
-      max-width: 50%;
-    }
-
-    .hero-left h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-
-    .hero-left p {
-      font-size: 14px;
-      max-width: 420px;
-      opacity: 0.9;
-    }
-
-    .hero-buttons {
-      margin-top: 25px;
-      display: flex;
-      gap: 15px;
-    }
-
-    .btn-main {
-      padding: 10px 22px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ff7a00, #ff4500);
-      color: #000000;
-    }
-
-    .btn-secondary {
-      padding: 10px 22px;
-      border-radius: 20px;
-      border: 1px solid #ff7a00;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      background: transparent;
-      color: #ffb347;
-    }
-
-    .hero-right {
-      max-width: 45%;
-      text-align: right;
-    }
-
-    .hero-right .tagline {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #ffb347;
-      margin-bottom: 10px;
-    }
-
-    .hero-right .big-text {
-      font-size: 26px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    .hero-right .desc {
-      font-size: 13px;
-      opacity: 0.85;
-    }
-
-    /* FOOTER SIMPLE */
-    .footer {
-      padding: 15px 40px;
-      font-size: 11px;
-      text-align: center;
-      background: #050505;
-      opacity: 0.9;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>BSS1815</title>
+<style>
+body {
+    margin:0;
+    padding:0;
+    background:linear-gradient(180deg, #ff7a00, #000000);
+    font-family:Arial, sans-serif;
+    color:white;
+}
+header {
+    padding:40px 20px;
+    text-align:center;
+    font-size:3em;
+    font-weight:bold;
+    letter-spacing:5px;
+}
+section {
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 20px;
+    text-align:center;
+    font-size:1.2em;
+    line-height:1.7;
+}
+</style>
 </head>
 <body>
 
-  <!-- HEADER: LOGO A GOCH -->
-  <header class="header">
-    <div class="header-left">
-      <!-- MET CHEMEN VRÈ IMG LOGO A ISIT -->
-      <img src="images/bss1815-logo.png" alt="BSS1815 PRO-MAX Logo" />
-      <div class="brand-text">
-        <span class="title">BSS1815 PRO-MAX FM</span>
-        <span class="subtitle">BRIYANT SOLEY SIGNO 1815 • HISTORICAL DOCUMENTARY • DMP</span>
-      </div>
-    </div>
+<header>BSS1815</header>
 
-    <nav class="header-right">
-      <a href="#home">Home</a>
-      <a href="#shows">Shows</a>
-      <a href="#podcasts">Podcasts</a>
-      <a href="#history">1815 Story</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO PRINCIPAL -->
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <h1>BSS1815 PRO-MAX FM</h1>
-      <p>
-        Briyant Soley Signo 1815, PRO+MAX, DMP — devan devan net bati pou jodi a.
-        Yon platfòm istorik, dokimantè, mizik, vwa pèp la, tout sa ki soti nan flanm 1815 rive jodi a.
-      </p>
-      <div class="hero-buttons">
-        <button class="btn-main">Kòmanse Tande</button>
-        <button class="btn-secondary">Gade Dokimantè 1815</button>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="tagline">Difé 1815 • PRO-MAX • DMP</div>
-      <div class="big-text">Devann Devann Net Bati Pou Jodi A</div>
-      <div class="desc">
-        Platfòm ou pou istwa, memwa, ak vwa ki pa janm etenn. BSS1815 se siy dife ki kontinye klere.
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    © BSS1815 PRO-MAX FM • Briyant Soley Signo 1815 • DMP
-  </footer>
+<section>
+    BSS1815 se pwojè ofisyèl la.  
+    Paj sa a se homepage prensipal la.  
+    Pa gen melanj ak okenn lòt pwojè.  
+    Tout bagay rete senp, pwòp, dirèk.
+</section>
 
 </body>
 </html>
