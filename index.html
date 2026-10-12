@@ -99,6 +99,7 @@
   <h2 data-ht="FANMI FELIX" data-en="FELIX FAMILY" data-fr="FAMILLE FELIX">FANMI FELIX</h2>
   <img id="felixSlide" src="anpere-doudou.jpeg" alt="Fanmi Felix">
   <video id="felixVideo" controls muted playsinline></video>
+  <p id="felixCount" style="color:#ffa54f;font-size:13px;margin-top:8px;">1 / 25</p>
   <div style="margin-top:12px;">
     <button id="musicBtn" onclick="toggleMusic()" style="background:#1a0d00;color:#ffa54f;border:2px solid #ffa54f;padding:10px 24px;border-radius:8px;font-weight:bold;cursor:pointer;">&#9835; JWE MIZIK</button>
     <audio id="felixMusic" loop preload="auto"><source src="mizik-slideshow.mp3" type="audio/mpeg"></audio>
@@ -147,6 +148,8 @@ function showFelix(){
 function nextFelix(){
   felixIdx = (felixIdx+1) % felixPhotos.length;
   showFelix();
+  var c = document.getElementById('felixCount');
+  if(c) c.textContent = (felixIdx+1) + ' / ' + felixPhotos.length;
 }
 setInterval(nextFelix, 10000);
 document.getElementById('felixSlide').onerror = function(){ nextFelix(); };
