@@ -1,140 +1,249 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DOCUMENTARY HISTORY OF BRIYANT SOLEY 1815</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BRIYANT SOLEY SIGNO 1815 — Dokimantè Istwa Ofisyèl</title>
+<meta name="description" content="Dokimantè Istwa Briyant Soley Signo 1815 — Yo kenbe flanbo a limen" />
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#050200;color:#FFC78E;font-family:Arial,sans-serif}
-header{background:#0A0A0A;border-bottom:3px solid #FF7A18;padding:15px;text-align:center;position:sticky;top:0;z-index:100}
-.logo{width:90px;height:90px;border-radius:50%;border:3px solid #FF7A18;object-fit:cover}
-h1{color:#FF7A18;font-size:1.3em;margin-top:8px}
-.sub{color:#FFC78E;font-size:.85em;margin-top:5px}
-.lang{margin-top:10px}
-button.l{background:#0A0A0A;color:#FF7A18;border:2px solid #FF7A18;padding:6px 16px;margin:0 4px;border-radius:20px;cursor:pointer;font-weight:bold}
-button.l.on{background:#FF7A18;color:#000}
-section{max-width:900px;margin:25px auto;padding:0 15px}
-h2.sec{color:#FF7A18;text-align:center;margin-bottom:15px;font-size:1.4em;border-bottom:2px solid #FF7A18;padding-bottom:8px}
-.scene{border:2px solid #FF7A18;border-radius:12px;overflow:hidden;margin-bottom:20px;background:#0A0A0A}
-.scene img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
-.scene-cap{padding:12px;text-align:center}
-.scene-cap b{color:#FF7A18}
-#konklizyon{background:#0A0A0A;border:2px solid #FF7A18;border-radius:12px;padding:20px}
-#memwa{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.mem-card{border:2px solid #FF7A18;border-radius:12px;overflow:hidden;background:#0A0A0A;text-align:center}
-.mem-card img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.mem-card h3{color:#FF7A18;padding:10px}
-#gallery-title{text-align:center;color:#FF7A18;margin:30px 0 15px;font-size:1.4em}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:15px;max-width:1200px;margin:auto}
-.card{position:relative;border-radius:10px;overflow:hidden;border:2px solid #FF7A18;background:#0A0A0A;aspect-ratio:3/4}
-.card img{width:100%;height:100%;object-fit:cover;display:block}
-.num{position:absolute;top:6px;left:6px;background:rgba(0,0,0,.85);color:#FF7A18;padding:3px 8px;border-radius:6px;font-weight:bold;font-size:.75em;border:1px solid #FF7A18}
-.overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.95));padding:20px 8px 8px;text-align:center}
-.name{color:#FF7A18;font-weight:900;font-size:.85em}
-.role{color:#FFC78E;font-size:.7em}
-footer{text-align:center;padding:20px;color:#FF7A18;border-top:2px solid #FF7A18;margin-top:20px}
+    * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background: linear-gradient(180deg, #080400 0%, #140a00 30%, #080400 60%, #1a0e00 100%);
+    color:#ffbe7a;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1.7;
+  }
+  a { color:#ff9e3e; }
+  /* HEADER */
+  header {
+    position:sticky; top:0; z-index:1000;
+    background:#0d0700;
+    border-bottom:3px solid #ff9e3e;
+    padding:12px 20px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+ .logo-wrap { display:flex; align-items:center; gap:12px; }
+ .sun-logo {
+    width:58px; height:58px; border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, #ffd9a0 0%, #ff9e3e 45%, #8a4a00 100%);
+    display:flex; align-items:center; justify-content:center;
+    color:#0d0700; font-weight:900; font-size:12px; text-align:center; line-height:1.1;
+    border:2px solid #ff9e3e;
+    box-shadow:0 0 25px rgba(255,158,62,.6);
+  }
+ .brand-name { color:#ff9e3e; font-weight:900; font-size:1.25em; letter-spacing:1px; }
+ .brand-sub { color:#ffbe7a; font-size:.75em; }
+  nav.main-nav { display:flex; gap:8px; flex-wrap:wrap; }
+  nav.main-nav a {
+    color:#ffbe7a; text-decoration:none; font-weight:bold; font-size:.82em;
+    border:1px solid #ff9e3e; padding:8px 14px; border-radius:22px;
+    background:#0d0700;
+  }
+  nav.main-nav a:hover { background:#ff9e3e; color:#0d0700; }
+  /* HERO */
+ .hero {
+    text-align:center; padding:70px 20px 60px;
+    background: radial-gradient(ellipse at center, rgba(255,158,62,.12) 0%, transparent 65%);
+  }
+ .hero-sun {
+    width:130px; height:130px; border-radius:50%; margin:0 auto 18px;
+    background: radial-gradient(circle at 35% 35%, #ffe2b8 0%, #ff9e3e 45%, #7a4200 100%);
+    display:flex; align-items:center; justify-content:center;
+    color:#0d0700; font-weight:900; font-size:22px; line-height:1.1;
+    border:3px solid #ff9e3e; box-shadow:0 0 45px rgba(255,158,62,.7);
+  }
+ .hero h1 { color:#ff9e3e; font-size:2.4em; margin:15px 0 10px; letter-spacing:1px; }
+ .hero h2 { color:#ffbe7a; font-size:1.1em; font-weight:normal; max-width:820px; margin:0 auto; }
+ .hero.devise { margin-top:14px; color:#ff9e3e; font-weight:bold; letter-spacing:2px; }
+ .btn-row { margin-top:24px; }
+ .btn {
+    display:inline-block; margin:8px 6px; padding:14px 30px; border-radius:32px;
+    background:#ff9e3e; color:#0d0700; font-weight:900; text-decoration:none; font-size:.95em;
+    border:2px solid #ff9e3e;
+  }
+ .btn.alt { background:transparent; color:#ff9e3e; }
+ .lang-row { margin-top:18px; }
+ .lang-row button {
+    background:#0d0700; color:#ff9e3e; border:1px solid #ff9e3e;
+    padding:7px 16px; margin:0 4px; border-radius:16px; cursor:pointer; font-weight:bold;
+  }
+  /* SECTIONS */
+  section.block { padding:60px 20px; max-width:1280px; margin:0 auto; border-top:1px solid #3d2200; }
+  section.block h2.sec-title { color:#ff9e3e; text-align:center; font-size:1.9em; margin-bottom:10px; }
+  p.sec-sub { text-align:center; margin-bottom:28px; color:#ffbe7a; max-width:850px; margin-left:auto; margin-right:auto; }
+  /* ISTWA */
+ .istwa-text { max-width:900px; margin:0 auto; background:#0d0700; border:2px solid #ff9e3e; border-radius:14px; padding:30px; }
+ .istwa-text p { margin-bottom:14px; }
+ .istwa-text b { color:#ff9e3e; }
+  /* DIRIJAN */
+ .dirijan-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+ .dirijan-card { background:#0d0700; border:2px solid #ff9e3e; border-radius:12px; padding:20px; }
+ .dirijan-card.role { color:#ff9e3e; font-weight:900; font-size:.85em; letter-spacing:1px; }
+ .dirijan-card.nom { color:#ffbe7a; font-size:1.1em; font-weight:bold; margin-top:6px; }
+  /* GALERI */
+ .galeri-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:14px; }
+ .photo-card {
+    background:#0d0700; border:2px solid #ff9e3e; border-radius:12px; overflow:hidden;
+    position:relative; aspect-ratio:3/4;
+  }
+ .photo-card img,.photo-card video { width:100%; height:100%; object-fit:cover; display:block; background:#000; }
+ .photo-cap {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(transparent, rgba(0,0,0,.97));
+    padding:26px 8px 10px; text-align:center;
+  }
+ .photo-cap b { color:#ff9e3e; font-size:.78em; display:block; }
+ .photo-cap span { color:#ffbe7a; font-size:.66em; }
+ .flanbo-badge {
+    position:absolute; top:8px; left:8px; background:rgba(0,0,0,.88); color:#ff9e3e;
+    border:1px solid #ff9e3e; padding:4px 10px; border-radius:8px; font-size:.68em; font-weight:900;
+  }
+  /* PROJETS */
+ .projets-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; }
+ .projet-card { background:#0d0700; border:2px solid #ff9e3e; border-radius:14px; padding:24px; }
+ .projet-card h3 { color:#ff9e3e; margin-bottom:10px; }
+  /* FOOTER / KONTAK */
+  footer { background:#0d0700; border-top:3px solid #ff9e3e; padding:45px 20px 30px; text-align:center; }
+  footer.tel-title { color:#ff9e3e; font-weight:900; font-size:1.2em; letter-spacing:1px; margin-bottom:10px; }
+  footer p { margin:7px 0; }
+ .social-row { margin:20px 0; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+ .social-row a { text-decoration:none; font-weight:bold; padding:9px 16px; border-radius:22px; border:1px solid; font-size:.88em; }
+ .copy { margin-top:18px; color:#ff9e3e; font-weight:bold; }
+  @media(max-width:600px){.hero h1{font-size:1.6em;} }
 </style>
 </head>
 <body>
+
 <header>
-<img src="logo-briyant-soley.jpg" class="logo" alt="LOGO" onerror="this.style.display='none'">
-<h1 data-kre="DOKIMANTÈ ISTWA BRIYANT SOLEY 1815" data-fra="DOCUMENTAIRE HISTOIRE DE BRIYANT SOLEY 1815" data-eng="DOCUMENTARY HISTORY OF BRIYANT SOLEY 1815">DOKIMANTÈ ISTWA BRIYANT SOLEY 1815</h1>
-<p class="sub" data-kre="DOKIMAN OFISYÈL - ISTWA AK ERITAJ" data-fra="DOCUMENTS OFFICIELS - HISTOIRE ET PATRIMOINE" data-eng="OFFICIAL DOCUMENTS - HISTORY AND HERITAGE">DOKIMAN OFISYÈL - ISTWA AK ERITAJ</p>
-<div class="lang">
-<button class="l on" onclick="setLang('kre',this)">KRE</button>
-<button class="l" onclick="setLang('fra',this)">FRA</button>
-<button class="l" onclick="setLang('eng',this)">ENG</button>
-</div>
+  <div class="logo-wrap">
+    <div class="sun-logo">SOLE<br>1815</div>
+    <div>
+      <div class="brand-name">BRIYANT SOLEY 1815</div>
+      <div class="brand-sub">DOKIMANTÈ ISTWA OFISYÈL</div>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <a href="#istwa">ISTWA</a>
+    <a href="#dirijan">DIRIJAN</a>
+    <a href="#flanbo">FLANBO</a>
+    <a href="#fanmi">FANMI FELIX</a>
+    <a href="#promax">PRO-MAX</a>
+    <a href="#kontak">KONTAK</a>
+  </nav>
 </header>
 
-<!-- 6 SCENES YOUN APRÈ LÒT -->
-<section id="scenes">
-<h2 class="sec" data-kre="6 SCÈNES" data-fra="6 SCÈNES" data-eng="6 SCENES">6 SCÈNES</h2>
-<div class="scene"><img src="scene1.jpg" alt="SCENE 1"><div class="scene-cap"><b>SCENE 1</b><p data-kre="Kòmansman istwa a" data-fra="Début de l'histoire" data-eng="Beginning of the story">Kòmansman istwa a</p></div></div>
-<div class="scene"><img src="scene2.jpg" alt="SCENE 2"><div class="scene-cap"><b>SCENE 2</b></div></div>
-<div class="scene"><img src="scene3.jpg" alt="SCENE 3"><div class="scene-cap"><b>SCENE 3</b></div></div>
-<div class="scene"><img src="scene4.jpg" alt="SCENE 4"><div class="scene-cap"><b>SCENE 4</b></div></div>
-<div class="scene"><img src="scene5.jpg" alt="SCENE 5"><div class="scene-cap"><b>SCENE 5</b></div></div>
-<div class="scene"><img src="scene6.jpg" alt="SCENE 6"><div class="scene-cap"><b>SCENE 6</b></div></div>
-</section>
-
-<!-- KONKLIZYON -->
-<section id="konklizyon-sec">
-<h2 class="sec" data-kre="KONKLIZYON" data-fra="CONCLUSION" data-eng="CONCLUSION">KONKLIZYON</h2>
-<div id="konklizyon"><p data-kre="Istwa Briyant Soley 1815 se eritaj nou. Nou sonje tout moun ki te batay pou kenbe flanm nan limen." data-fra="L'histoire de Briyant Soley 1815 est notre patrimoine. Nous nous souvenons de tous ceux qui ont lutté pour garder la flamme allumée." data-eng="The history of Briyant Soley 1815 is our heritage. We remember all those who fought to keep the flame alive.">Istwa Briyant Soley 1815 se eritaj nou. Nou sonje tout moun ki te batay pou kenbe flanm nan limen.</p></div>
-</section>
-
-<!-- MEMWA 2 MOUN KI MOURI -->
-<section>
-<h2 class="sec" data-kre="MEMWA" data-fra="MÉMOIRE" data-eng="IN MEMORY">MEMWA</h2>
-<div id="memwa">
-<div class="mem-card"><img src="konkont.jpg" alt="KONKONT"><h3>KONKONT</h3></div>
-<div class="mem-card"><img src="papouche-stratège.jpg" alt="PAPOUCHE STRATÈGE"><h3>PAPOUCHE STRATÈGE</h3></div>
+<div class="hero">
+  <div class="hero-sun">SOLE<br>1815</div>
+  <h1>BRIYANT SOLEY SIGNO 1815</h1>
+  <h2>Dokimantè Istwa ofisyèl — tout moun ki kenbe flanbo a limen, depi 1815 jouk jodi a.</h2>
+  <div class="devise">DEVAN DEVAN NÈT — BATI POU JODI A</div>
+  <div class="btn-row">
+    <a class="btn" href="#flanbo">YO KENBE FLANBO A</a>
+    <a class="btn alt" href="#istwa">LI ISTWA A</a>
+  </div>
+  <div class="lang-row"><button>ENG</button><button>FRA</button><button>KRE</button></div>
 </div>
+
+<section class="block" id="istwa">
+  <h2 class="sec-title">ISTWA BRIYANT SOLEY 1815</h2>
+  <p class="sec-sub">Dokimantè Istwa Briyant</p>
+  <div class="istwa-text">
+    <p><b>BRIYANT SOLEY SIGNO 1815</b> se limyè ki pa janm etenn. Depi 1815, flanbo a pase soti nan men zansèt yo rive nan men la relèv jodi a.</p>
+    <p>Paj sa a se <b>dokimantè ofisyèl</b> istwa a. Li reyini dirijan yo, <b>Fanmi Felix</b> kòm flanbo holders, ak tout <b>la relèv</b> ki kenbe flanbo BSS1815 la limen.</p>
+    <p><b>Fondateur :</b> Max Louis alias Le Baron — BSS1815.</p>
+  </div>
 </section>
 
-<!-- GALERI -->
-<h2 id="gallery-title" data-kre="GALERI" data-fra="GALERIE" data-eng="GALLERY">GALERI</h2>
-<div class="grid">
-<div class="card"><div class="num">01</div><img src="ti-lafrance.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI-LA FRANCE</div><div class="role">TET PANSANT</div></div></div>
-<div class="card"><div class="num">02</div><img src="jij-mayan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JIJ MAYAN</div><div class="role">TREZORYE</div></div></div>
-<div class="card"><div class="num">03</div><img src="vice-prezidan-tatane.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VICE PREZIDAN TATANE</div><div class="role">VICE PREZIDAN</div></div></div>
-<div class="card"><div class="num">04</div><img src="roro-lajan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RORO LAJAN</div><div class="role">MEDIATEUR</div></div></div>
-<div class="card"><div class="num">05</div><img src="desulme-derosier.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DESULME DEROSIER</div><div class="role">DIRIJAN</div></div></div>
-<div class="card"><div class="num">06</div><img src="warrens.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">WARRENS</div></div></div>
-<div class="card"><div class="num">07</div><img src="bouboul.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BOUBOUL</div><div class="role">KOLONEL</div></div></div>
-<div class="card"><div class="num">08</div><img src="joseph-marthone.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JOSEPH MARTHONE</div></div></div>
-<div class="card"><div class="num">09</div><img src="jude-joseph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JUDE JOSEPH</div></div></div>
-<div class="card"><div class="num">10</div><img src="yguens.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">YGUENS</div></div></div>
-<div class="card"><div class="num">11</div><img src="ralph.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">RALPH</div></div></div>
-<div class="card"><div class="num">12</div><img src="valery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">VALERY</div><div class="role">MOTIVATEUR</div></div></div>
-<div class="card"><div class="num">13</div><img src="doodly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">DOODLY</div></div></div>
-<div class="card"><div class="num">14</div><img src="evens-elie.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">EVENS ELIE</div></div></div>
-<div class="card"><div class="num">15</div><img src="sonsonn.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SONSONN</div><div class="role">SEKRETE</div></div></div>
-<div class="card"><div class="num">16</div><img src="komandan-landry.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN LANDRY</div></div></div>
-<div class="card"><div class="num">17</div><img src="jeff-colin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JEFF COLIN</div></div></div>
-<div class="card"><div class="num">18</div><img src="mambo-fifi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAMBO FIFI</div></div></div>
-<div class="card"><div class="num">19</div><img src="marassa.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MARASSA</div></div></div>
-<div class="card"><div class="num">20</div><img src="majistra-junior.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA JUNIOR</div></div></div>
-<div class="card"><div class="num">21</div><img src="majistra-mauclair.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAJISTRA MAUCLAIR</div></div></div>
-<div class="card"><div class="num">22</div><img src="prezidan-ti-rat.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN TI RAT</div></div></div>
-<div class="card"><div class="num">23</div><img src="perodin.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PERODIN</div></div></div>
-<div class="card"><div class="num">24</div><img src="prezidan-aly.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">PREZIDAN ALY</div></div></div>
-<div class="card"><div class="num">25</div><img src="jackson-montina.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">JACKSON MONTINA</div></div></div>
-<div class="card"><div class="num">26</div><img src="roosevelt.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ROOSEVELT</div></div></div>
-<div class="card"><div class="num">27</div><img src="fanfan-decoline.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FANFAN DECOLINE</div></div></div>
-<div class="card"><div class="num">28</div><img src="cols.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">COLS</div></div></div>
-<div class="card"><div class="num">29</div><img src="cange.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">CANGE</div></div></div>
-<div class="card"><div class="num">30</div><img src="ampere-doudou.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">AMPERE DOUDOU</div></div></div>
-<div class="card"><div class="num">31</div><img src="macu-mk.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MACU & MK</div></div></div>
-<div class="card"><div class="num">32</div><img src="may.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MAY</div></div></div>
-<div class="card"><div class="num">33</div><img src="madina.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">MADINA</div></div></div>
-<div class="card"><div class="num">34</div><img src="ti-chery.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI CHERY</div></div></div>
-<div class="card"><div class="num">35</div><img src="baron-plenn-lan.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">BARON PLENN LAN</div></div></div>
-<div class="card"><div class="num">36</div><img src="ti-reynold.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI REYNOLD</div></div></div>
-<div class="card"><div class="num">37</div><img src="kendy.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KENDY</div></div></div>
-<div class="card"><div class="num">38</div><img src="serette.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SERETTE</div></div></div>
-<div class="card"><div class="num">39</div><img src="komandan-senkant.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">KOMANDAN SENKANT</div></div></div>
-<div class="card"><div class="num">40</div><img src="guypson.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYPSON</div></div></div>
-<div class="card"><div class="num">41</div><img src="nadege.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">NADEGE</div></div></div>
-<div class="card"><div class="num">42</div><img src="flore.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">FLORE</div></div></div>
-<div class="card"><div class="num">43</div><img src="guylene-samedi.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">GUYLENE SAMEDI</div></div></div>
-<div class="card"><div class="num">44</div><img src="la-belle-yole.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">LA BELLE YOLE</div></div></div>
-<div class="card"><div class="num">45</div><img src="samba-serge.jpeg" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">SAMBA SERGE</div></div></div>
-<div class="card"><div class="num">46</div><img src="ti-fre.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">TI FRE</div></div></div>
-<div class="card"><div class="num">47</div><img src="one-man.png" loading="lazy" onerror="this.style.display='none'"><div class="overlay"><div class="name">ONE MAN</div></div></div>
-</div>
-<footer>DOKIMANTÈ ISTWA BRIYANT SOLEY 1815 © 2026</footer>
+<section class="block" id="dirijan">
+  <h2 class="sec-title">DIRIJAN BSS1815</h2>
+  <p class="sec-sub">Estrikti dirijan yo</p>
+  <div class="dirijan-grid">
+    <div class="dirijan-card"><div class="role">SEKRETÈ</div><div class="nom">Sonsonn</div></div>
+    <div class="dirijan-card"><div class="role">TREZORYE</div><div class="nom">Fanfan</div></div>
+    <div class="dirijan-card"><div class="role">MEDIATÈ</div><div class="nom">Roro Lajan</div></div>
+    <div class="dirijan-card"><div class="role">VIS-PREZIDAN</div><div class="nom">Tatane</div></div>
+    <div class="dirijan-card"><div class="role">ANPERÈ</div><div class="nom">Ti Rat</div></div>
+    <div class="dirijan-card"><div class="role">KÒMANDAN</div><div class="nom">Kòmandan Landry</div></div>
+    <div class="dirijan-card"><div class="role">MANM</div><div class="nom">Yguens, Brunel, Madina, Jude Joseph</div></div>
+    <div class="dirijan-card"><div class="role">FONDATEUR</div><div class="nom">Max Louis alias Le Baron</div></div>
+  </div>
+</section>
+
+<section class="block" id="flanbo">
+  <h2 class="sec-title">YO KENBE FLANBO BSS1815 LA — LA RELÈV</h2>
+  <p class="sec-sub">Ak non sa yo, n ap fè konnen ke se moun sa yo ki kenbe flanbo BSS1815 la</p>
+  <div class="galeri-grid" id="grid-flanbo"></div>
+</section>
+
+<section class="block" id="fanmi">
+  <h2 class="sec-title">FANMI FELIX — TRIBUTE</h2>
+  <p class="sec-sub">Fanmi Felix — flanbo holders : Cangè Kodonatè, Sonsonn, Ones Felix, Andy Felix, Michel Felix, Sindy Berlus, Andre Asouman, Ti Dè &amp; Ti Dò, Papouche Stratège</p>
+  <div class="galeri-grid" id="grid-fanmi"></div>
+</section>
+
+<section class="block" id="promax">
+  <h2 class="sec-title">BSS1815 PRO-MAX DMP</h2>
+  <p class="sec-sub">Ekosistèm Digital Management Platform</p>
+  <div class="projets-grid">
+    <div class="projet-card"><h3>PRO-MAX FM 106.5</h3><p>Radyo ofisyèl — estasyon MAXIMAX60 sou MyRadioStream.</p><p style="margin-top:8px;font-size:.85em">Sous nouvèl : Le Nouvelliste, AlterPresse, Ayibopost, Haiti Libre, Radio Métropole, Radio Télé Ginen, Radio Kiskeya, The Haitian Times, VOA Kreyòl, RFI.</p></div>
+    <div class="projet-card"><h3>PRO-MAX ACADÉMIE</h3><p>Fòmasyon pwofesyonèl ak prezantasyon ekstravagan.</p></div>
+    <div class="projet-card"><h3>PRO-MAX BEAT LAB</h3><p>Studio beat pwofesyonèl.</p></div>
+    <div class="projet-card"><h3>DEVAN DEVAN NÈT</h3><p>Bati pou jodi a.</p></div>
+    <div class="projet-card"><h3>MAXIMAX MULTI SERVICES</h3><p>Sèvis konplè pou kominote a.</p></div>
+    <div class="projet-card"><h3>BSS DIGITAL HERITAGE CENTER</h3><p>Sant eritaj dijital BSS1815.</p></div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="tel-title">[USA] TELEFON 24/7</div>
+  <p>[TEL] (317) 538-1150 &nbsp;|&nbsp; [TEL] (516) 216-8494 &nbsp;|&nbsp; [TEL] (407) 640-5166</p>
+  <p>Haiti : +5094343-7488 (CANGÉ FÉLIX) &nbsp;|&nbsp; +50942544447 (ADAN JOSTIN)</p>
+  <p>[WEB] www.bss1815pro-maxdmp.com &nbsp;|&nbsp; [MAIL] bss1815promaxdmp@gmail.com</p>
+  <div class="social-row">
+    <a href="#" style="color:#1877F2;border-color:#1877F2">[f] Facebook</a>
+    <a href="#" style="color:#E4405F;border-color:#E4405F">[ig] Instagram</a>
+    <a href="#" style="color:#1DA1F2;border-color:#1DA1F2">[t] Threads</a>
+    <a href="#" style="color:#25D366;border-color:#25D366">[w] WhatsApp</a>
+    <a href="#" style="color:#FF0000;border-color:#FF0000">[y] YouTube</a>
+  </div>
+  <div class="lang-row"><button>ENG</button><button>FRA</button><button>KRE</button></div>
+  <div class="copy">BRIYANT SOLEY SIGNO 1815 © 2026 — KENBE FLANBO A LIMEN</div>
+</footer>
+
 <script>
-function setLang(l,b){
-document.querySelectorAll('.l').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-document.querySelectorAll('[data-kre]').forEach(el=>{
-let v=el.getAttribute('data-'+l);
-if(v) el.textContent=v;
-});
-document.documentElement.lang=l;
+var LIST_FLANBO = ["cange.jpeg","andy-jean.jpeg","anpere-doudou.jpeg","badin.jpeg","baron-plenn-lan.jpeg","bss-digital-heritage.jpeg","cange-felix.jpeg","cols.jpeg","desulme-derosier.png","doodly.jpeg","emaze.jpeg","evens-elie.png","fanfan-decoline.jpeg","felix.png","flore.jpeg","franklyn-montina.jpeg","guylene-samedi.jpeg","guypson.png","jackson-montina.jpeg","jeff-colin.jpeg","joseph-marthone.jpeg","jackson-prof.mp4","jude-joseph.jpeg","karl-henry.jpeg","kendy.png","komandan-senkant.jpeg","komandan-landry.jpeg","koukou-flying.mp4","la-belle-yole.jpeg","La-force-son.png","macu-&-mk.png","madina.png","majistra-junior.jpeg","majistra-mauclaire.jpeg","mambo-fif.jpeg","marassa.jpeg","max-&-lafrance.jpeg","max.jpeg","may.jpeg","miamianaksyon.jpeg","michel-unbeatable.jpeg","nadege.png","ones asouman.jpeg","papit.jpeg","paulema.jpeg","papouche-stratege.png","perodin.jpeg","prezidan-aly.jpeg","prezidan-papit.jpeg","pro-maxacademie.mp4","promax.jpeg","ralph-polisye.jpeg","roosevelt.jpeg","rorola-jan.jpeg","sanba-macu.mp4","serette.jpg","sanba-serge.jpeg","sindy.jpeg","sonsonn.jpeg","tania-felix.png","teamsanpresyon.jpeg","the-change.jpeg","the-founder.mp4","ti-cheri.jpeg","ti-fre.png","ti-lafrance.jpeg","ti-rat.jpeg","ti-reynold.png","tide-&-tido.png","tifre.jpeg","warrens.jpeg","yguens.png","team-backup.jpeg"];
+
+var LIST_FANMI = ["tide-&-tido.png","the-change.jpeg","teamsanpresyon.jpeg","team-backup.jpeg","tania.jpeg","tania-felix.png","sonsonn.png","sonsonn.jpeg","papouche-stratege.png","ones.jpeg","ones asouman.jpeg","michel-unbeatable.jpeg","max.jpeg","miamianaksyon.jpeg","marassa.jpeg","mambo-fifi.jpeg","mambo-fif.jpeg","felix.png","emaze.jpeg","doodly.jpeg","colone.png","cange.jpeg","cange-felix.jpeg","bss-digital-heritage","bss-digital-heritage.jpeg","asouman.png","anpre-doudou.jpeg","anpere-doudou.jpeg","sindy.jpeg","La-force-son.png"];
+
+function prettyName(n){
+  return n.replace(/\.[a-z0-9]+$/i,'').replace(/[-_]+/g,' ').toUpperCase();
 }
+function buildGrid(list, gridId, badgeText){
+  var grid = document.getElementById(gridId);
+  var seen = {};
+  list.forEach(function(f){
+    if(seen[f]) return; seen[f]=1;
+    var isVid = /\.mp4$/i.test(f);
+    var card = document.createElement('div');
+    card.className = 'photo-card';
+    var m = isVid? document.createElement('video') : document.createElement('img');
+    m.src = f;
+    if(isVid){ m.controls = true; m.muted = true; m.preload = "metadata"; }
+    else { m.loading = "lazy"; m.onerror = function(){ card.style.display='none'; }; }
+    card.appendChild(m);
+    var badge = document.createElement('div');
+    badge.className = 'flanbo-badge'; badge.textContent = badgeText;
+    card.appendChild(badge);
+    var cap = document.createElement('div');
+    cap.className = 'photo-cap';
+    cap.innerHTML = '<b>'+prettyName(f)+'</b><span>KENBE FLANBO BSS1815</span>';
+    card.appendChild(cap);
+    grid.appendChild(card);
+  });
+}
+buildGrid(LIST_FLANBO, 'grid-flanbo', 'FLANBO');
+buildGrid(LIST_FANMI, 'grid-fanmi', 'FANMI FELIX');
 </script>
 </body>
 </html>
